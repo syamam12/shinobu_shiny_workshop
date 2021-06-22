@@ -19,7 +19,7 @@ Here I am cleaning up my data
 & Data Viz (recommend: separate data wraningling and viz into 2 chunks)
 ```{r}
 airline %>%
- filter(Y >= 7.4 & Y <= 23.8) %>%
+ filter(Y >= 7.4 & Y <= 20) %>%
  filter(W >= 0.62 & W <= 1.78) %>%
  filter(R >= 
     0.375 & R <= 0.59) %>%
