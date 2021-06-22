@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Import Proc
+Here I am importing some data
+
+```{r}
+library(tidyverse)
+library(haven)
+airline <- read_sas("http://www.principlesofeconometrics.com/sas/airline.sas7bdat", 
+    NULL)
+airline
+```
+Data wrangle
+Here I am cleaning up my data
+
+& Data Viz (recommend: separate data wraningling and viz into 2 chunks)
+```{r}
+airline %>%
+ filter(Y >= 7.4 & Y <= 23.8) %>%
+ filter(W >= 0.62 & W <= 1.78) %>%
+ filter(R >= 
+    0.375 & R <= 0.59) %>%
+ filter(L >= 2.35 & L <= 6.9) %>%
+ filter(K >= 3.8 & K <= 
+    9.6) %>%
+ ggplot() +
+ aes(x = W, fill = R) +
+ geom_histogram(bins = 30L) +
+ scale_fill_gradient() +
+ theme_minimal()
+```
+
+
+
